@@ -9,7 +9,7 @@ export class ContactProvider {
 
   constructor(private db: AngularFireDatabase) { }
 
-
+  
   getAll() {
 
     return this.db.list(this.PATH)

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { ContactProvider } from '../../providers/contact/contact';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 
+
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -11,16 +13,27 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 export class HomePage {
   contacts: Observable<any>;
 
+
+
   constructor(
     public navCtrl: NavController,
     private toast: ToastController,
     private provider: ContactProvider,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+
   ) {
 
     this.contacts = this.provider.getAll();
 
   }
+
+  sendMsg()
+  {
+    this.navCtrl.push('SmsPage');
+  }
+
+
+  
 
   showAlert() {
     let alert = this.alertCtrl.create({
@@ -46,8 +59,9 @@ export class HomePage {
 
   newContact() {
     this.navCtrl.push('ContactPage');
-
   }
+
+ 
 
   editContact(contact: any) {
     //maneira 1

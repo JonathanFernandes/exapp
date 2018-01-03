@@ -13,6 +13,9 @@ import { ContactProvider } from '../providers/contact/contact';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SmsProvider } from '../providers/sms/sms';
+
+
 
 
 
@@ -20,6 +23,7 @@ import { HomePage } from '../pages/home/home';
   declarations: [
     MyApp,
     HomePage
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ContactProvider
+    ContactProvider,
+    SmsProvider
   ]
 })
 export class AppModule { }
