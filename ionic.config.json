@@ -1,0 +1,8 @@
+{
+  "name": "exapp",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
