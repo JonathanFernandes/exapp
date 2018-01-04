@@ -32,6 +32,11 @@ export class HomePage {
     this.navCtrl.push('SmsPage');
   }
 
+  addContact()
+  {
+    this.navCtrl.push('AddtechPage');
+  }
+
 
   
 
