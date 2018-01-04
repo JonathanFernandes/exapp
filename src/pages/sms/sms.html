@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="midnight-blue">
     <ion-title>Enviar SMS</ion-title>
   </ion-navbar>
 
@@ -15,11 +15,28 @@
 
 <ion-content padding>
   <ion-card>
+
+      <ion-item>
+          <ion-label stacked>Destinatário</ion-label>
+          <ion-input [(ngModel)]="phoneNumber" type="tel"></ion-input>
+        </ion-item>
+
     <ion-item>
-      <ion-label stacked>Menssage></ion-label>
-      <ion-input types="text"></ion-input>
+      <ion-label stacked>Digite sua mensagem</ion-label>
+      <ion-input [(ngModel)]="textMessage" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button icon-left clear item-right (click)="sendTextMessage()">
+      <ion-icon name="checkmark"></ion-icon>
+      Send
+    </button>
     </ion-item>
   </ion-card>
+
+  <div padding>
+      <button ion-button color="midnight-blue" block type="submit" (click)="homePage()">Voltar a lista de contatos</button>
+    </div>
 
   
 </ion-content>

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="Primary">
+  <ion-navbar color="midnight-blue">
     <ion-title>
      Lista de contatos
     </ion-title>
@@ -7,17 +7,17 @@
 </ion-header>
 <ion-content padding>
 
-  <ion-list>
+  <ion-list >
     <ion-item-sliding *ngFor="let contact of contacts | async">>
       <ion-item>
         <h1>{{ contact.name }}</h1>
         <p>{{ contact.tel }}</p>
-      </ion-item>
+      </ion-item >
       <ion-item-options side="left">
-        <button ion-button color="secondary" (click)="editContact(contact)">
+        <button ion-button color="Nephritis" (click)="editContact(contact)">
           <ion-icon name="create"></ion-icon>
         </button>
-        <button ion-button color="danger" (click)="showAlert()"(click)="removeContact(contact.key)">
+        <button ion-button color="midnight-blue" (click)="showAlert()"(click)="removeContact(contact.key)">
           <ion-icon name="trash"></ion-icon>
         </button> 
       </ion-item-options>
@@ -26,12 +26,12 @@
   </ion-list>
 
   <ion-fab bottom right>
-    <button ion-fab color="primary" (click)="newContact()">
+    <button ion-fab color="Nephritis" (click)="newContact()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
    
     <div padding>
-        <button ion-button color="blue" block type="submit" (click)="sendMsg()">Clique para enviar uma menssagem</button>
+        <button ion-button color="pomegranate" block type="submit" (click)="sendMsg()">Clique para enviar uma menssagem</button>
       </div>
 </ion-content>

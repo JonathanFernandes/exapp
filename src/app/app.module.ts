@@ -14,6 +14,7 @@ import { ContactProvider } from '../providers/contact/contact';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SmsProvider } from '../providers/sms/sms';
+import { HomePageModule } from '../pages/home/home.module';
 
 
 
@@ -22,7 +23,7 @@ import { SmsProvider } from '../providers/sms/sms';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    
 
   ],
   imports: [
@@ -37,7 +38,8 @@ import { SmsProvider } from '../providers/sms/sms';
       messagingSenderId: "865802278736"
 
     }),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HomePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

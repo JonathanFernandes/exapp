@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {SMS} from '@ionic-native/sms';
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 /**
  * Generated class for the SmsPage page.
  *
@@ -15,12 +16,44 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SmsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  phoneNumber: Number;
+  textMessage: string;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private toast: ToastController
+  ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SmsPage');
+  homePage()
+  {
+    this.navCtrl.push('HomePage');
+  }
+
+  async sendTextMessage(){
+
+    await SMS.prototype.send(String(this.phoneNumber),this.textMessage);
+    const toast = this.toast.create({
+      message: 'Mensagem enviada!',
+      duration : 3000
+    });
+    toast.present();
+    
+    }
+    catch (e) {
+      const toast = this.toast.create({
+        message: 'Erro ao enviar',
+        duration : 3000
+      });
+      toast.present();
+    }
+
+
+  
+  //ionViewDidLoad() {
+   // console.log('ionViewDidLoad SmsPage');
   }
 
   
-}
+
